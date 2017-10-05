@@ -1,0 +1,28 @@
+{
+  "name": "incidentbot",
+  "version": "1.0.0",
+  "description": "Bot to integrate with Snow",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinhatanu/Incident-Bot.git"
+  },
+  "keywords": [
+    "bot",
+    "skype",
+    "servicenow"
+  ],
+  "author": "Tanu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sinhatanu/Incident-Bot/issues"
+  },
+  "homepage": "https://github.com/sinhatanu/Incident-Bot#readme",
+  "dependencies": {
+    "botbuilder": "^3.10.2",
+    "restify": "^6.0.1"
+  }
+}
