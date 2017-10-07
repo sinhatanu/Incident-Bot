@@ -1,4 +1,4 @@
-	
+var json2html = require('node-json2html');	
 var tableify = require("tableify");
 var restify = require('restify');
 var builder = require('botbuilder');
@@ -12,9 +12,9 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 
 // Create chat connector for communicating with the Bot Framework Service
 var connector = new builder.ChatConnector({
-     appId: 'YourAppId', appPassword: 'YourAppPassword'
-     //appId: process.env.MICROSOFT_APP_ID,
-     //appPassword: process.env.MICROSOFT_APP_PASSWORD 
+    appId: 'f4055b93-fa9e-44ea-b2be-e92a295e2a24', appPassword: 'Tk2nAKkoZxUFhzYM9FmaUBo'
+    // appId: process.env.MICROSOFT_APP_ID,
+    // appPassword: process.env.MICROSOFT_APP_PASSWORD 
 });
 
 // Listen for messages from users 
@@ -87,7 +87,7 @@ function invokeAPI (options) {
        var message = {
        type: 'message',
        textFormat: 'xml',
-       text: htmlstring
+       text: htmlString
 
     // text:'<table><tbody><tr><td class="string"> INC0020002-Performance problems with </td></tr><tr><td class="string"> INC0020001-test</td></tr><tr><td class="string"> INC0020003-Performance problems with </td></tr><tr><td class="string"> INC0010001-Test</td></tr></tbody></table>'
 //text: tableH 
@@ -96,12 +96,27 @@ function invokeAPI (options) {
    session.send(htmlString);
   // session.send(htmlString);
    session.send(message);
+   
+   var transform = {'<>':'li','html':'${name} (${age})'};
+   
+var data = [
+   {'name':'Bob','age':40},
+   {'name':'Frank','age':15},
+   {'name':'Bill','age':65},
+   {'name':'Robert','age':24}
+];
+   
+var res = json2html.transform(data,transform);
+session.send(res);
     });   
    // end      
 });
 }
 });
-   
+server.get('/', restify.serveStatic({
+    directory: __dirname,
+    default: '/index.html'
+   }));  
                    
            
  

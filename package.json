@@ -23,6 +23,8 @@
   "homepage": "https://github.com/sinhatanu/Incident-Bot#readme",
   "dependencies": {
     "botbuilder": "^3.10.2",
-    "restify": "^6.0.1"
+    "node-stringify": "^0.2.0",
+    "restify": "^6.0.1",
+    "tableify": "^1.1.0"
   }
 }
